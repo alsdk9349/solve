@@ -13,9 +13,6 @@ public class Main {
             bw.write(Integer.parseInt(st.nextToken())+Integer.parseInt(st.nextToken())+"\n");
 
         }
-        br.close();
         bw.flush();
-        bw.close();
-
     }
 }
