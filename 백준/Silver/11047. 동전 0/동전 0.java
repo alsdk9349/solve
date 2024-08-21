@@ -14,17 +14,18 @@ public class Main {
         int K = Integer.parseInt(st.nextToken());
         int count = 0;
         int result = 0;
-        int [] arr = new int[N];
+        List<Integer> arr=new ArrayList<>();
         for (int i=0;i<N;i++) {
             int coin = Integer.parseInt(br.readLine());
             if (coin<=K) {
-                arr[i]=coin;
+                arr.add(coin);
                 count++;
             }
         }
         for (int i=count-1;i>=0;i--) {
-            result+= K/arr[i];
-            K = K%arr[i];
+            int now = arr.get(i);
+            result+= K/now;
+            K = K%now;
             if (K==0) {
                 break;
             }
