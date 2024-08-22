@@ -9,32 +9,32 @@ public class Main {
         String st = br.readLine();
         int result = 0;
         int num = 0;
-        String sn = "";
+        StringBuilder sb = new StringBuilder();
         boolean flag = false;
         for (int i = 0; i < st.length(); i++) {
             char c = st.charAt(i);
             if (flag && (c=='-' || c=='+')) {
-                num = Integer.parseInt(sn);
+                num = Integer.parseInt(sb.toString());
                 result-=num;
-                sn = "";
+                sb = new StringBuilder();
             } else if (c=='-') {
                 flag = true;
-                num = Integer.parseInt(sn);
+                num = Integer.parseInt(sb.toString());
                 result+=num;
-                sn = "";
+                sb = new StringBuilder();
             } else if (c=='+') {
-                num = Integer.parseInt(sn);
+                num = Integer.parseInt(sb.toString());
                 result+=num;
-                sn = "";
+                sb = new StringBuilder();
             } else {
-                sn += c;
+                sb.append(c);
             }
         }
         if (flag) {
-            num = Integer.parseInt(sn);
+            num = Integer.parseInt(sb.toString());
             result-=num;
         } else {
-            num = Integer.parseInt(sn);
+            num = Integer.parseInt(sb.toString());
             result+=num;
         }
         System.out.println(result);
