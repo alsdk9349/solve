@@ -10,7 +10,7 @@ public class Main {
 
         int N = Integer.parseInt(br.readLine());
         int [] A = new int[N];
-        int [] B = new int[N];
+        Integer [] B = new Integer[N];
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
             A[i] = Integer.parseInt(st.nextToken());
@@ -20,11 +20,11 @@ public class Main {
             B[i] = Integer.parseInt(st.nextToken());
         }
         Arrays.sort(A);
-        Arrays.sort(B);
+        Arrays.sort(B,Collections.reverseOrder());
 
         int res = 0;
         for (int i = 0; i < N; i++) {
-            res += A[i] * B[N-i-1];
+            res += A[i] * B[i];
         }
         System.out.println(res);
     }
