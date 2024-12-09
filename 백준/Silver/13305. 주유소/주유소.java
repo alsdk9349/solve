@@ -11,19 +11,19 @@ public class Main {
         int N = Integer.parseInt(br.readLine());
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int[] distance = new int[N-1];
+        long[] distance = new long[N-1];
         for (int i=0;i<N-1;i++) {
-            distance[i] = Integer.parseInt(st.nextToken());
+            distance[i] = Long.parseLong(st.nextToken());
         }
 
-        int[] price = new int[N-1];
+        long[] price = new long[N-1];
         st = new StringTokenizer(br.readLine());
         for (int i=0;i<N-1;i++) {
-            price[i] = Integer.parseInt(st.nextToken());
+            price[i] = Long.parseLong(st.nextToken());
         }
 
-        int mini = (int) 21e8;
-        int result = 0;
+        long mini = (long) 21e8;
+        long result = 0;
 
         for (int i=0;i<N-1;i++) {
             if (price[i]<mini) {
